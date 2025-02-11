@@ -1,8 +1,8 @@
-import AppPage from "@/components/AppPage";
-import AuthProvider from "@/context/AuthProvider";
+
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import ProjectRoot from "./ProjectRoot";
 
 const DMSans = DM_Sans({
   variable: "--font-DM-Sans",
@@ -22,14 +22,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body
         className={`${DMSans.variable} ${DMSans.variable} antialiased`}
       >
-        <AuthProvider>
-          <AppPage title="Kredibu - Your one-trust platform">{children}</AppPage>
-        </AuthProvider>
+        <ProjectRoot>{children}</ProjectRoot>
       </body>
     </html>
   );

@@ -4,15 +4,36 @@ import Link from "next/link";
 import { ReactNode } from "react";
 
 
+const navLinks = [
+    {
+        title: 'Why kredibu',
+        link: '/'
+    },
+    {
+        title: 'Products',
+        link: '/#',
+    },
+    {
+        title: 'Verify',
+        link: '/verify'
+    },
+    {
+        title: 'Developers',
+        link: '/developers'
+    },
+];
+
 export function Header() {
-    return <header className="sticky">
+    return <header className="sticky top-0">
         <div className="relative top-0">
             <div className="flex justify-between items-center p-4">
                 <span className="text-2xl font-bold"><Link href='/'>Kredibu</Link></span>
                 <nav className="hidden lg:flex justify-evenly p-5 w-2/4 h-full bg-white  rounded-full">
-                    <Link href="/">Why Kredibu</Link>
+                    {/* <Link href="/">Why Kredibu</Link>
                     <Link href="/#">Products</Link>
-                    <Link href="/developers">Developers</Link>
+                    <Link href="/verify">Verify</Link>
+                    <Link href="/developers">Developers</Link> */}
+                    {navLinks.map((val, i) => <Link key={i} href={val.link}>{val.title}</Link>)}
                 </nav>
                 <nav className="flex gap-4">
                     <Link href="/sign-up">Sign Up</Link>

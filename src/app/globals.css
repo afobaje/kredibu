@@ -24,6 +24,31 @@ body{
   color:var(--red-madder);
   background-color: var(--background-color-linen);
   font-family: Arial, Helvetica, sans-serif;
+
+}
+.list-benefit {
+  padding-left: 20px;
+li{
+  background-image: url('../../assets/check.svg');
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  padding-left: 24px;
+  background-position: left center;
+}
+li::before{
+  content: "";
+  background-color: var(--mauve);
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border-radius: 3px;
+  display: flex;
+  /* top:5px; */
+  /* left:20px; */
+  z-index: -1;
+  left:-24px;
+  top:14px;
+}
 }
 
 @media (prefers-color-scheme:dark) {

@@ -10,7 +10,6 @@ export function useRouterReady() {
         if (pathName) {
             setIsReady(true)
         }
-       
     }, [pathName])
     return isReady;
 }

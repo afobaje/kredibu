@@ -1,14 +1,12 @@
+import type { LinkButtonType } from '@/Types/ComponentType'
+import clsx from 'clsx'
 import Link from 'next/link'
 
-type LinkButton = {
-    text: string,
-    link: string,
-    className?: string
-}
 
-export default function LinkButton({ text, link }: LinkButton) {
+
+export default function LinkButton({ text, link, className }: LinkButtonType) {
     return (<>
-        <Link className='rounded-md whitespace-nowrap pt-3 link font-bold text-lg p-4 text-white ' href={link} >{text}</Link>
+        <Link className={clsx(className, 'rounded-md whitespace-nowrap  link font-bold text-lg text-white ')} href={link} >{text}</Link>
         <style>{`
         .link{
         background-color:var(--moderate-green);

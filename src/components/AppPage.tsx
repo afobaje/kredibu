@@ -2,6 +2,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { ReactNode } from "react";
+import LinkButton from "./DesignComponents/LinkButton";
 
 
 const navLinks = [
@@ -36,7 +37,7 @@ export function Header() {
                     {navLinks.map((val, i) => <Link key={i} href={val.link}>{val.title}</Link>)}
                 </nav>
                 <nav className="flex gap-4">
-                    <Link href="/sign-up">Sign Up</Link>
+                    <LinkButton className='p-2' link="/sign-up" text="Create a free account" />
                 </nav>
             </div>
         </div>

@@ -1,4 +1,4 @@
- @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -49,6 +49,14 @@ li::before{
   left:-24px;
   top:14px;
 }
+}
+
+.verify-card{
+  /* color: #ffeee2; */
+  background-color: var(--mauve);
+  height: 10rem;
+  border-radius: 25px;
+  /* height: 100%; */
 }
 
 @media (width<=768px) {

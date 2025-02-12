@@ -1,13 +1,73 @@
+
+'use client'
 import { HomePageType } from '@/Types/ComponentType'
 import clsx from 'clsx'
 import Image from 'next/image'
 import ImageFiles from './../Constants/Image'
 import { Container } from './DesignComponents/Container'
 import LinkButton from './DesignComponents/LinkButton'
+import InputField from './DesignComponents/InputField'
+import { ChangeEvent, useState } from 'react'
 const { Trust } = ImageFiles;
 
 function HomePageContainer({ className, children }: HomePageType) {
     return <div className={clsx('min-h-[60lvh] my-10', className)}>{children}</div>
+}
+
+function UniqueId() {
+    const [userState, setUserState] = useState('')
+    const [userCountry, setUserCountry] = useState('')
+    function handleStateChange(e: ChangeEvent<HTMLInputElement>) {
+        setUserState(e.target.value);
+    }
+
+
+    function isEven(val: number) {
+        return val % 2 == 0;
+    }
+
+
+    function getAcronym(value: string) {
+        const splitValues = value.split('');
+        const isValueEven = isEven(splitValues.length);
+        if (isValueEven) {
+            const acronym = splitValues.slice(0, 3)
+            return acronym.join('').toUpperCase();
+        }
+        if (splitValues.length === 3) {
+            return splitValues.join('').toUpperCase();
+        }
+    }
+
+    function handleCountryChange(e: ChangeEvent<HTMLInputElement>) {
+        setUserCountry(e.target.value);
+    }
+    return <HomePageContainer className='flex gap-3 items-center justify-center'>
+        <div className="flex verify-card min-h-80 p-5 w-full">
+            <div className="flex flex-col gap-3">
+                <h2 className='text-2xl '>
+                    {`Don't know your state or country acronym? Verify here`}
+                </h2>
+                <div className="flex">
+                    <div className="input-container flex flex-col gap-2">
+                        <InputField placeholder='State' value={userState} onChange={handleStateChange} type='text' />
+                        <p className='ml-2'>{userState}</p>
+                        <p>{userState !== '' ? getAcronym(userState) : ''}</p>
+                    </div>
+                    <div className="input-container flex flex-col gap-2">
+                        <InputField placeholder='Country' value={userCountry} onChange={handleCountryChange} type='text' />
+                        <p className='ml-2'>{userCountry}</p>
+                        <p>{userCountry !== '' ? getAcronym(userCountry) : ''}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="flex max-w-[45%] pl-5 flex-col gap-3">
+            <h2 className="text-3xl">What does the unique ID look like?</h2>
+            <p className='text-lg'>Because we are creating a system that is usable globally, we created a unique id system which is a collection of your state, country and unique digits</p>
+            <p className='text-lg'>Any state or country is easily verifiable here</p>
+        </div>
+    </HomePageContainer>
 }
 
 function DeveloperExperience() {
@@ -68,12 +128,19 @@ function HeroNav() {
     </div>
 }
 
+
+function Footer() {
+    return <footer></footer>
+}
+
 export default function HomePage() {
     return (
         <Container className='flex gap-5 flex-col'>
             <HeroNav />
             <HowToUse />
             <DeveloperExperience />
+            <UniqueId />
+            <Footer />
         </Container>
     )
 }

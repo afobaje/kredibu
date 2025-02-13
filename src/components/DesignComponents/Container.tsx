@@ -1,4 +1,4 @@
-import { HomePageType } from "@/Types/ComponentType";
+import { HomePageType } from "@/Types/Type";
 import clsx from "clsx";
 
 export const Container = ({

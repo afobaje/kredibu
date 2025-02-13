@@ -1,7 +1,7 @@
 "use client"
 import AppPage from '@/components/AppPage'
 import AuthProvider from '@/context/AuthProvider'
-import { useRouterReady } from '@/hooks/useRouterReady.hook';
+import { useRouterReady } from '@/hooks/useRouterReady';
 import React, { ReactNode } from 'react'
 
 export default function ProjectRoot({ children }: { children: ReactNode }) {

@@ -1,4 +1,4 @@
-import type { LinkButtonType } from '@/Types/ComponentType'
+import type { LinkButtonType } from '@/Types/Type'
 import clsx from 'clsx'
 import Link from 'next/link'
 

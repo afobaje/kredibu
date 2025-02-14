@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { ReactNode } from "react";
 import LinkButton from "./DesignComponents/LinkButton";
+import Footer from "./Footer";
 
 
 const navLinks = [
@@ -46,21 +47,13 @@ export function Header() {
 
 export default function AppPage({ children, title = 'Kredibu' }: { children: ReactNode, title?: string }) {
     return (
-
-        <main className="flex flex-col page-x-padding">
+        <main className="flex flex-col ">
             <Head>{title}</Head>
             <Header />
             <div>
                 {children}
             </div>
-            <style jsx>
-                {`
-                .page-x-padding{
-                    padding:0 10px;
-                }
-                `}
-            </style>
+            <Footer />
         </main>
-
     )
 }

@@ -1,17 +1,18 @@
 'use client'
+import ImageFiles from '@/Constants/Image'
 import { useInputValue } from '@/hooks/useInputValue'
 import { HomePageType } from '@/Types/Type'
-import ImageFiles from '@/Constants/Image'
 import { getAcronym } from '@/utils/getAcronym'
 import clsx from 'clsx'
 import Image from 'next/image'
-import { Container } from './DesignComponents/Container'
+import Link from 'next/link'
+import { GoArrowUpRight } from 'react-icons/go'
 import InputField from './DesignComponents/InputField'
 import LinkButton from './DesignComponents/LinkButton'
-const { Trust } = ImageFiles;
+const { Trust, Lines, SDK } = ImageFiles;
 
-function HomePageContainer({ className, children }: HomePageType) {
-    return <div className={clsx('min-h-[60lvh] my-10', className)}>{children}</div>
+export function HomePageContainer({ className, children }: HomePageType) {
+    return <div className={clsx('min-h-[60lvh] my-10 w-10/12 mx-auto', className)}>{children}</div>
 }
 
 function UniqueId() {
@@ -48,6 +49,52 @@ function UniqueId() {
     </HomePageContainer>
 }
 
+function DeveloperProduct() {
+
+    return <div className="flex dev min-h-[70vh]">
+        <HomePageContainer>
+            <div className='flex  flex-col gap-10'>
+                <h1 className='text-3xl font-bold'>Supercharge your application with powerful SDKs</h1>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                    <div className="card-one p-12 lg:col-span-2 rounded-3xl bg-amber-50  justify-evenly flex">
+                        <div className='max-w-1/2 flex items-center justify-center'>
+                            <h2 className='text-5xl px-10 font-bold'>Access a well secured data with no security leak</h2>
+                        </div>
+                        <div className="sdk max-w-1/2"
+                        // style={{backgroundImage:`url(${SDK.src})`,backgroundSize:'cover',backgroundColor:'red'}}
+                        >
+                            <figure className=''>
+                                <Image src={SDK} className='sdk-img -mb-12 rounded-tl-3xl rounded-tr-3xl object-contain ' alt="" />
+                            </figure>
+                        </div>
+                        {/* <h2>Supercharge your application with plug-and-play SDKs</h2> */}
+                    </div>
+                    <div className="card-two gap-5 p-10 rounded-3xl bg-blue-300 text-start">
+                        <h2 className='text-2xl'>Approve vital information based on data</h2>
+                        <span className="inline-flex items-center justify-center gap-1">
+                            <Link href='/docs' className='text-blue-600 text-2xl hover:underline underline-offset-4'>Read our API docs</Link>
+                            <GoArrowUpRight className='font-semibold text-blue-600 text-3xl' />
+                        </span>
+                        {/* <LinkButton link='/docs'  text='Go to Docs' /> */}
+                    </div>
+                    <div className="card-three p-10  rounded-3xl bg-blue-300 text-start">
+                        <h2 className='text-2xl'>Transact business sponsored by data</h2>
+                    </div>
+                </div>
+            </div>
+            <style>
+                {`
+             .sdk-img{
+             z-index:-4;}
+             .dev{
+            background-position:cover;
+             background-image:url('${Lines.src}')};
+             `}
+            </style>
+        </HomePageContainer>
+    </div>
+}
+
 function DeveloperExperience() {
     return <HomePageContainer className='flex'>
         <div className="flex flex-col gap-3 max-w-[50%]">
@@ -56,7 +103,7 @@ function DeveloperExperience() {
             <p className='text-xl'>Leave the headache of client credibility to us and go make cool products with our platform</p>
         </div>
         <div className="flex">
-            <p>Hello world</p>
+           
         </div>
     </HomePageContainer>
 }
@@ -84,41 +131,47 @@ function HowToUse() {
 
 
 function HeroNav() {
-    return <div className='h-[100vh]'>
-        <div className='flex h-full container '>
-            <div className='text-wrapper gap-4 flex flex-col  lg:max-w-[50%]'>
-                <div className='font-bold pt-24 text-3xl lg:text-4xl'>
-                    <h1>Transact business with</h1>
-                    <h1>peace of mind backed by data.</h1>
-                </div>
-                <p className='text-lg'>We are powering systems with data of carefully vetted clients to allow you make your next transaction with ease and also peace of mind.</p>
-                <div>
-                    <LinkButton className='pt-3 p-4' link='/sign-up' text='Create a free account' />
-                </div>
-            </div>
-            <div className="hidden lg:flex">
-                <div className="flex relative items-center justify-center">
-                    <Image src={Trust} alt="trust" className='w-full hero-image relative -0 -right-28 -top-20 -z-20 h-full object-contain' />
-                </div>
+    return <HomePageContainer>
 
+        <div className='h-[100vh]'>
+            <div className='flex h-full container '>
+                <div className='text-wrapper gap-4 flex flex-col  lg:max-w-[50%]'>
+                    <div className='font-bold pt-24 text-3xl lg:text-4xl'>
+                        <h1>Transact business with</h1>
+                        <h1>peace of mind backed by data.</h1>
+                    </div>
+                    <p className='text-lg'>We are powering systems with data of carefully vetted clients to allow you make your next transaction with ease and also peace of mind.</p>
+                    <div>
+                        {/* <Link href='/'></Link> */}
+                        <LinkButton className='pt-3 p-4' link='/sign-up' text='Create a free account' />
+                    </div>
+                </div>
+                <div className="hidden lg:flex">
+                    <div className="flex relative items-center justify-center">
+                        <Image src={Trust} alt="trust" className='w-full hero-image relative -0 -right-28 -top-20 -z-20 h-full object-contain' />
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </HomePageContainer>
+
 }
 
 
-function Footer() {
-    return <footer></footer>
-}
+
 
 export default function HomePage() {
     return (
-        <Container className='flex gap-5 flex-col'>
+
+        <div className='flex mx-auto gap-5 flex-col'>
             <HeroNav />
             <HowToUse />
+            <DeveloperProduct />
             <DeveloperExperience />
             <UniqueId />
-            <Footer />
-        </Container>
+            {/* <Footer/> */}
+        </div>
+
+
     )
 }

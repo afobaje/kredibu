@@ -4,11 +4,15 @@ import AuthProvider from '@/context/AuthProvider'
 import { useRouterReady } from '@/hooks/useRouterReady';
 import React, { ReactNode } from 'react'
 
-export default function ProjectRoot({ children }: { children: ReactNode }) {
+type ProjectType = { children: ReactNode }
+
+export default function ProjectRoot({ children }: ProjectType) {
     const isReady = useRouterReady();
     return (
         isReady && <AuthProvider>
-            <AppPage title="Kredibu - Your one-trust platform">{children}</AppPage>
+            <AppPage title="Kredibu - Your one-trust platform">
+                {children}
+            </AppPage>
         </AuthProvider>
     )
 }

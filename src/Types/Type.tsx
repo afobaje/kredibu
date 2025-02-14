@@ -14,6 +14,13 @@ export type LinkButtonType = {
 export type InputType = {
     type: string
     onChange: (event: ChangeEvent<HTMLInputElement>) => void
-    value: string
+    value?: string
     placeholder: string
+}
+
+export type TabsType = {
+    tabsName: string[]
+    className?: string
+    tabsContent: ReactNode[]
+    // renderItem: () => ReactNode
 }

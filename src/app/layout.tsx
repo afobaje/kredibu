@@ -1,15 +1,31 @@
 
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import ProjectRoot from "./ProjectRoot";
 
-const DMSans = DM_Sans({
-  variable: "--font-DM-Sans",
-  subsets: ["latin"]
+
+
+const poppins=Poppins({
+  variable:"--font-poppins",
+  subsets:["latin",],
+  weight:['100','200','300','400']
 });
+// const DMSans = DM_Sans({
+//   variable: "--font-DM-Sans",
+//   subsets: ["latin"]
+// });
 
-
+// const RobotoCondensed=Roboto_Condensed({
+//   variable:'--roboto-condensed',
+//   display:'swap',
+//   subsets:['latin','latin-ext','cyrillic','cyrillic-ext','vietnamese']
+// })
+// const Poppins = Poppins({
+//   variable: '--poppins',
+//   subsets: ['latin', 'latin-ext'],
+  
+// });
 
 
 export const metadata: Metadata = {
@@ -26,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${DMSans.variable} ${DMSans.variable} antialiased`}
+        className={`${poppins.className} antialiased`}
       >
         <ProjectRoot>{children}</ProjectRoot>
       </body>

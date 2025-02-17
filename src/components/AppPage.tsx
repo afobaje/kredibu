@@ -50,7 +50,7 @@ export default function AppPage({ children, title = 'Kredibu' }: { children: Rea
         <main className="flex flex-col ">
             <Head>{title}</Head>
             <Header />
-            <div>
+            <div className="min-h-[100lvh]">
                 {children}
             </div>
             <Footer />

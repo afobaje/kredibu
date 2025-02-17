@@ -5,6 +5,10 @@
 /* @import "postcss"; */
 
 
+html{
+  font-family: var(--roboto-condensed);
+}
+
 
 :root{
   --background-color-linen:#ffeee2;
@@ -23,8 +27,9 @@
   --darker-lilac:#a875a8;
 }
 body{
-  color:var(--red-madder);
-  background-color: var(--background-color-linen);
+  color:black;
+  /* color:var(--red-madder); */
+  /* background-color: var(--background-color-linen); */
   font-family: Arial, Helvetica, sans-serif;
 
 }
@@ -61,12 +66,33 @@ li::before{
   /* height: 100%; */
 }
 
+.herotab{
+  /* background-color: var(--mauve); */
+  border-radius: 5px;
+  background-color: gray;
+  padding:0 5px;
+  cursor: pointer;
+  /* height: 10rem; */
+ 
+}
+.trigger[data-state="inactive"]{
+  cursor: pointer;
+}
+.trigger[data-state="active"]{
+  /* color: green !important; */
+  color: white;
+  background-color: var(--wine);
+  padding: 5px 0;
+  cursor:pointer;
+  border-radius: 5px;
+  /* background-color: black !important; */
+}
 
 
-/* .global-input:not(:placeholder-shown){
+.global-input:not(:placeholder-shown){
   border:1px solid green;
-  background-color: red;
-} */
+  /* background-color: w; */
+}
 
 @media (width<=768px) {
   .list-benefit {

@@ -1,5 +1,6 @@
+/* eslint-disable react/jsx-key */
 "use client"
-import {  businessSignUp, individualSignup } from '@/app/actions/auth';
+import { businessSignUp, individualSignup } from '@/app/actions/auth';
 import { SignUpInput } from '@/components/DesignComponents/InputField';
 import { TabList } from '@/components/DesignComponents/Tabs';
 import { useActionState } from 'react';
@@ -103,16 +104,19 @@ function BusinessForm() {
 
   return <div className="flex w-full border p-10 border-cyan-950 shadow-md rounded-md">
     <form action={action} className='w-full'>
-      <div className="flex w-full">
+      <div className="flex w-full flex-col">
         <div className='flex flex-col w-full'>
-          <SignUpInput inputName='businessName' className='' placeholder='First Name' type='text' onChange={() => { }} />
+          <SignUpInput inputName='businessName' className='' placeholder='Business Name' type='text' onChange={() => { }} />
           {state?.errors?.businessName && <p>{state.errors.businessName}</p>}
         </div>
-        
-      </div>
-     
+        <SignUpInput inputName='CAC' placeholder='CAC' type='text' onChange={() => { }} />
+        <SignUpInput inputName='Email' placeholder='Email' type='email' onChange={() => { }} />
+        <SignUpInput inputName='OwnerID' placeholder='Owner ID' type='text' onChange={() => { }} />
 
-   
+      </div>
+
+
+
       <button className='bg-green-500 rounded-md py-1 px-2 cursor-pointer text-white' disabled={pending} type="submit">Submit</button>
     </form>
   </div>
@@ -131,7 +135,7 @@ export default function SignUpPage() {
         <div className="flex flex-col  w-full items-center justify-center ">
           <TabList
             className='min-h-[60lvh] w-full '
-            tabsContent={[<IndividualForm key='one' />, <BusinessForm key='two' />]}
+            tabsContent={[<IndividualForm />, <BusinessForm />]}
             tabsName={tabsName} />
         </div>
       </div>

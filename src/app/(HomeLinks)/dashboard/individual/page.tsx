@@ -1,10 +1,3 @@
-import React from 'react'
+import IndividualDashboard from "@/components/Dashboard/IndividualDashboard/IndividualDashboard";
 
-
-
-// const dashboardSidebarItems:string[]=['Permissions']
-export default function IndividualDashboard() {
-  return (
-    <div>IndividualDashboard</div>
-  )
-}
+export default IndividualDashboard;

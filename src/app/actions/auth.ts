@@ -23,10 +23,8 @@ export async function individualSignup(state: FormState, formData: FormData) {
 }
 
 
-export async function businessSignUp(
-    state: BusinessFormState,
-     formData: FormData) {
-    // console.log(state, 'whats our business state logic')
+export async function businessSignUp(state: BusinessFormState, formData: FormData) {
+    
 
     const validatedFields = BusinessSignUpFormSchema.safeParse({
         businessName: formData.get('businessName')

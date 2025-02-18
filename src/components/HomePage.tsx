@@ -9,9 +9,8 @@ import Link from 'next/link'
 import { GoArrowUpRight } from 'react-icons/go'
 import InputField from './DesignComponents/InputField'
 import LinkButton from './DesignComponents/LinkButton'
-const { Trust,
-     Lines,
-      SDK } = ImageFiles;
+import HomePageLayout from './HomePageLayout/HomePageLayout'
+const { Trust, Lines, SDK } = ImageFiles;
 
 export function HomePageContainer({ className, children }: HomePageType) {
     return <div className={clsx('min-h-[60lvh] my-10 w-10/12 mx-auto', className)}>{children}</div>
@@ -105,7 +104,7 @@ function DeveloperExperience() {
             <p className='text-xl'>Leave the headache of client credibility to us and go make cool products with our platform</p>
         </div>
         <div className="flex">
-           
+
         </div>
     </HomePageContainer>
 }
@@ -164,15 +163,16 @@ function HeroNav() {
 
 export default function HomePage() {
     return (
+        <HomePageLayout>
+            <div className='flex mx-auto gap-5 flex-col'>
+                <HeroNav />
+                <HowToUse />
+                <DeveloperProduct />
+                <DeveloperExperience />
+                <UniqueId />
+            </div>
+        </HomePageLayout>
 
-        <div className='flex mx-auto gap-5 flex-col'>
-            <HeroNav />
-            <HowToUse />
-            <DeveloperProduct />
-            <DeveloperExperience />
-            <UniqueId />
-            {/* <Footer/> */}
-        </div>
 
 
     )

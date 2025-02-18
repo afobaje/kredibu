@@ -1,7 +1,3 @@
-import React from 'react'
+import BusinessDashboard from "@/components/Dashboard/BusinessDashboard/BusinessDashboard";
 
-export default function page() {
-  return (
-    <div>business dashboard</div>
-  )
-}
+export default BusinessDashboard;

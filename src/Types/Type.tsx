@@ -1,6 +1,6 @@
 
 import { BusinessSignUpFormSchema } from "@/utils/auth/signup"
-import { ChangeEvent, ReactNode } from "react"
+import { ChangeEvent, ReactElement, ReactNode } from "react"
 import { z } from "zod"
 
 export type HomePageType = {
@@ -15,7 +15,7 @@ export type LinkButtonType = {
 }
 
 export type InputType = {
-    type: string
+    type: 'text' | 'password' | 'email'
     inputName: string
     className?: string
     onChange: (event: ChangeEvent<HTMLInputElement>) => void
@@ -27,7 +27,7 @@ export type TabsType = {
     tabsName: string[]
     className?: string
     tabsContent: ReactNode[]
-    // renderItem: () => ReactNode
+
 }
 
 export type ProjectType = { children: ReactNode }
@@ -40,14 +40,22 @@ export type FormState = | {
         password?: string[]
     }
     message?: string
-}|undefined
+} | undefined
 
 
-export type BusinessFormState=|{
-    errors?:{
-        businessName?:string[]
+export type BusinessFormState = | {
+    errors?: {
+        businessName?: string[]
     }
-    message?:string
-}|undefined
+    message?: string
+} | undefined
 
-export type BusinessFormType=z.infer<typeof BusinessSignUpFormSchema>;
+export type BusinessFormType = z.infer<typeof BusinessSignUpFormSchema>;
+
+
+export type DashboardLayoutType = { sidebar: ReactNode, children: ReactElement }
+
+
+export type MenuType = { title: string, item: ReactNode[] }
+
+export type MenuItemType = { icon: ReactNode, label: string, href?: string, onClick?: () => void }

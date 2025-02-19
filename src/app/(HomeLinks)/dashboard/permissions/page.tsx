@@ -1,11 +1,11 @@
-import DashboardLayout from '@/components/Dashboard/DashboardLayout'
-import { sidebar } from '@/components/Dashboard/IndividualDashboard/IndividualDashboard'
-import React from 'react'
+
+import IndividualDashboardLayout from '@/components/IndividualDashboardLayout/IndividualDashboardLayout'
+
 
 export default function page() {
   return (
-   <DashboardLayout sidebar={sidebar}>
-    <p>this is permissions page</p>
-   </DashboardLayout>
+    <IndividualDashboardLayout>
+      <section>this is permissions</section>
+    </IndividualDashboardLayout>
   )
 }

@@ -1,4 +1,3 @@
-
 import { BusinessSignUpFormSchema } from "@/utils/auth/signup"
 import { ChangeEvent, ReactElement, ReactNode } from "react"
 import { z } from "zod"
@@ -30,7 +29,9 @@ export type TabsType = {
 
 }
 
-export type ProjectType = { children: ReactNode }
+export type State = { hasError: boolean }
+
+export type PropsType = { children: ReactNode }
 
 
 export type FormState = | {

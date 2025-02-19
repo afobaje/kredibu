@@ -18,8 +18,8 @@ export default function Sidebar({ children }: { children: ReactNode }) {
   }
 
   return (
-    <SidebarContext value={{ docked }}>
-      <aside className={clsx(docked ? 'lg:w-[70px]' : 'lg:w-[250px]', 'overflow-visible  p-3 h-full')}>
+    <SidebarContext.Provider value={{ docked }}>
+      <aside className={clsx(docked ? 'lg:w-[70px]' : 'lg:w-[250px]', 'flex-shrink-0  p-3 h-full')}>
         <div className="flex flex-col">
           <div className="logo flex justify-between my-3"><span>Kredibu</span>
             <span onClick={toggleDocked}>
@@ -37,6 +37,6 @@ export default function Sidebar({ children }: { children: ReactNode }) {
           {children}
         </div>
       </aside>
-    </SidebarContext>
+    </SidebarContext.Provider>
   )
 }

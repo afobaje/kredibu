@@ -1,4 +1,3 @@
-
 import IndividualDashboardLayout from '@/components/IndividualDashboardLayout/IndividualDashboardLayout'
 
 

@@ -1,10 +1,14 @@
+import { Card, ResponsiveCard } from '@/components/DesignComponents/ResponsiveCard'
 import IndividualDashboardLayout from '@/components/IndividualDashboardLayout/IndividualDashboardLayout'
-import React from 'react'
 
 export default function page() {
     return (
         <IndividualDashboardLayout>
-            <section>this is applications page</section>
+           <ResponsiveCard>
+            <Card>
+                <h1>this is applications</h1>
+            </Card>
+           </ResponsiveCard>
         </IndividualDashboardLayout>
     )
 }

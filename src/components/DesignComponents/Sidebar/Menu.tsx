@@ -34,7 +34,7 @@ export function MenuItem({ icon, label, href, onClick }: MenuItemType) {
         }
     }
 
-    function getActive() {
+    function getActive():boolean {
         return pathName === href;
     }
     const isActive = getActive()

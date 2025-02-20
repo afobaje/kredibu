@@ -6,8 +6,8 @@ export default function DashboardLayout({ sidebar, children }: DashboardLayoutTy
       <div className='flex w-full'>
         {sidebar}
         <div className='flex-1 overflow-y-auto grid min-h-screen'>
-         
-          {children}</div>
+          {children}
+          </div>
       </div>
     </section>
   )

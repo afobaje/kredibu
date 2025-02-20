@@ -1,5 +1,5 @@
 'use client'
-import ResponsiveCard from "@/components/DesignComponents/ResponsiveCard";
+import { ResponsiveCard } from "@/components/DesignComponents/ResponsiveCard";
 import IndividualDashboardLayout from "@/components/IndividualDashboardLayout/IndividualDashboardLayout";
 
 export default function IndividualDashboard() {
@@ -7,9 +7,8 @@ export default function IndividualDashboard() {
   return (
     <IndividualDashboardLayout>
       <ResponsiveCard>
-      <section className=" flex flex-col">
+      <section className="flex flex-col">
         <p>this is individual dashboard</p>
-        {/* this is individual dashboard */}
         </section>
       </ResponsiveCard>
     </IndividualDashboardLayout>

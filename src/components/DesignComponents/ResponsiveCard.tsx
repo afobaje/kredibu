@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 export function Card({children}:{children:ReactNode}) {
   return (
-    <div className=" p-5 rounded-md shadow-md bg-white">
+    <div className=" p-5 rounded-xs shadow-md bg-white">
       {children}
     </div>
   )

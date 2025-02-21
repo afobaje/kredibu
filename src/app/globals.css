@@ -134,7 +134,26 @@ footer{
   -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
 }
   
-  
+  .table{
+    /* tr::even{
+      background-color: var(--pale-purple-one);
+    } */
+     /* tr:n */
+     tr{
+      padding:0 4px;
+     
+     }
+     tr:nth-child(even){
+      background-color: rgb(218, 217, 217);
+      /* border-radius:5px; */
+      td:first-child{
+        border-radius:15px 0 0 15px;
+      }
+      td:last-child{
+        border-radius:0 15px 15px 0;
+      }
+     }
+  }
 
 @media (prefers-color-scheme:dark) {
   

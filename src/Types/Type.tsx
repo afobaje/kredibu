@@ -60,3 +60,5 @@ export type DashboardLayoutType = { sidebar: ReactNode, children: ReactElement }
 export type MenuType = { title: string, item: ReactNode[] }
 
 export type MenuItemType = { icon: ReactNode, label: string, href?: string, onClick?: () => void }
+
+export type DashboardCardType={label:string,buttonText:string,onClick?:()=>void}

@@ -13,7 +13,7 @@ export function Card({children}:{children:ReactNode}) {
 export function ResponsiveCard({ children, isLoading }: { children: ReactNode, isLoading?: boolean }) {
   return (
     <div className='bg-gray-100 p-5 rounded-md h-full'>
-      <div className={clsx(isLoading && 'opacity-30')}>
+      <div className={clsx(isLoading && 'opacity-30')}> 
         {children}
       </div>
       {isLoading && <div className='grid place-items-center'>
